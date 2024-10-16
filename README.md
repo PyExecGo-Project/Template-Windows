@@ -28,12 +28,12 @@ Follow the steps below to set up and run your Python program using PyExecGo:
 
    Place all your Python files in the same folder as `main.go`.
 
-3. **Insert the Secret Sauce**
+3. **Insert the Special Sauce**
 
-   Before compiling, **copy the contents of `secret-sauce.py` and paste it at the beginning of your `main.py` (or your start script).**  
+   Before compiling, **copy the contents of `special-sauce.py` and paste it at the beginning of your `main.py` (or your start script).**  
    **This code must be on line 1 of your Python script.**
 
-   After copying the content, you can safely delete `secret-sauce.py`.
+   After copying the content, you can safely delete `special-sauce.py`.
 
 4. **Edit `main.go`**
 
