@@ -11,4 +11,4 @@ print(sys.path)
 ## PyExecGo ##
 
 
-# Add the codeblock above to main.py, it must be at the top!
+# Add the codeblock above, to main.py, it must be at the top!
