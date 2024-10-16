@@ -1,4 +1,4 @@
-# 🐍 PyExecGo Project Template
+# 🐍 PyExecGo Project Template for Windows
 
 > **Note**: This is a template where most of the setup is already done to use PyExecGo. I’m working on an automatic builder that will handle these steps automatically! :)
 
