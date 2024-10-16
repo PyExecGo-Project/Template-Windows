@@ -10,7 +10,7 @@ Follow the steps below to set up and run your Python program using PyExecGo:
 
 ### Prerequisites
 
-- Go installed on your system (https://golang.org/dl/)
+- Go installed on your system (https://go.dev/dl/)
 - A Python program that you want to run
 
 ### Installation Steps
