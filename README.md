@@ -1,6 +1,6 @@
 # 🐍 PyExecGo Project Template for Windows
 
-> **Note**: This is a template where most of the setup is already done to use PyExecGo. I’m working on an automatic builder that will handle these steps automatically! :)
+**Important**: This repository is specifically for the PyExecGo project itself. If you’re not looking for the PyExecGo source code but want to build your programs or scripts with PyExecGo, take a look at our [PyExecGo Builder](https://github.com/PyExecGo-Project/PyExecGo-Builder).
 
 PyExecGo is a simple tool that allows you to run Python programs without needing Python installed on the target machine. It uses a portable version of Python and automatically installs any dependencies listed in `requirements.txt`.
 
@@ -10,7 +10,7 @@ Follow the steps below to set up and run your Python program using PyExecGo:
 
 ### Prerequisites
 
-- Go installed on your system (https://go.dev/dl/)
+- Go installed on your system ([Download Go](https://go.dev/dl/))
 - A Python program that you want to run
 
 ### Installation Steps

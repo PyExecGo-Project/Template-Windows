@@ -11,7 +11,6 @@ import (
 func main() {
 	fmt.Println(`  
 
-
 	_____       ______                _____       
 	|  __ \     |  ____|              / ____|      
 	| |__) |   _| |__  __  _____  ___| |  __  ___  
@@ -23,7 +22,7 @@ func main() {
    
    
 	`)
-	fmt.Println("© PyExecGo Contributors")
+	fmt.Println("© PyExecGo Contributors - PyExecGo Executable version: v1.1.0")
 	fmt.Println("PyExecGo is released under the MIT License")
 	fmt.Println("Copyright and license of original developers are respected and can be found in LICENSE.md if applicable.")
 	fmt.Println("This executable was built for the project: github.com/PyExecGo-Project/template")
@@ -52,11 +51,16 @@ func main() {
 		return
 	}
 
-	// Installing dependencies
-	installCmd := exec.Command(".\\python.exe", "-m", "pip", "install", "-r", "..\\requirements.txt")
-	if err := installCmd.Run(); err != nil {
-		fmt.Println("Error installing dependencies:", err)
-		return
+	// Check if requirements.txt exists before installing dependencies
+	if _, err := os.Stat("../requirements.txt"); err == nil {
+		// Installing dependencies
+		installCmd := exec.Command(".\\python.exe", "-m", "pip", "install", "-r", "..\\requirements.txt")
+		if err := installCmd.Run(); err != nil {
+			fmt.Println("Error installing dependencies:", err)
+			return
+		}
+	} else {
+		fmt.Println("requirements.txt not found. Skipping installation.")
 	}
 
 	// Execute the main.py script
