@@ -1,0 +1,6 @@
+.\python39
+.\Scripts
+.
+
+import site
+

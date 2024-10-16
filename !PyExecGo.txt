@@ -1,0 +1,31 @@
+🐍 PyExecGo is a tool designed to make your life easier when using Python programs.
+
+Typically, to run a Python program, you need to have Python installed on your computer, which can be a hassle. This process can lead to confusion and technical issues that you don’t want to deal with.
+
+With PyExecGo, you don’t have to worry about installing anything. It allows you to run Python programs without needing to install Python on your PC. This means you can use the program right away, without any complications or headaches.
+
+Another important point is that the original code from developers remains open source when using PyExecGo. This transparency ensures that you can trust the code, as there’s no risk of tampering. In contrast, using tools like Py2Exe can hide the code, making it impossible for you to verify what’s been changed or added.
+
+In short, PyExecGo simplifies the process and lets you run Python programs easily while keeping everything open and trustworthy.
+
+
+
+_____       ______                _____       
+|  __ \     |  ____|              / ____|      
+| |__) |   _| |__  __  _____  ___| |  __  ___  
+|  ___/ | | |  __| \ \/ / _ \/ __| | |_ |/ _ \ 
+| |   | |_| | |____ >  <  __/ (__| |__| | (_) |
+|_|    \__, |______/_/\_\___|\___|\_____|\___/ 
+		__/ |                                  
+		|___/                                   
+		
+
+© PyExecGo Contributors
+PyExecGo is released under the MIT License
+Copyright and license of original developers are respected and can be found in LICENSE.md if applicable.
+
+Make sure you trust the original developers!
+Please note: We only execute Python scripts and do not take responsibility for any issues that may arise from the provided scripts by the developers of the original project. Exercise caution and review the code before running.
+
+
+[!] Important: This text file must be included in every project that uses PyExecGo. It's essential for users to be aware of all relevant details.
