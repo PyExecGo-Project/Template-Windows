@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"os/exec"
@@ -22,26 +21,23 @@ func main() {
    
    
 	`)
-	fmt.Println("© PyExecGo Contributors - PyExecGo Executable version: v1.1.0")
+	fmt.Println("© PyExecGo Contributors - PyExecGo Executable version: v1.2.0")
 	fmt.Println("PyExecGo is released under the MIT License")
 	fmt.Println("Copyright and license of original developers are respected and can be found in LICENSE.md if applicable.")
 	fmt.Println("This executable was built for the project: github.com/PyExecGo-Project/template")
 	fmt.Println()
 
-	// Show splash screen for 5 seconds
-	for i := 5; i > 0; i-- {
+	for i := 1; i > 0; i-- {
 		fmt.Printf("\rStarting in %d seconds...", i)
 		time.Sleep(1 * time.Second)
 	}
 	fmt.Println()
 
-	// Change the current working directory to portable-python-bin
 	if err := os.Chdir("portable-python-bin"); err != nil {
 		fmt.Println("Error changing directory:", err)
 		return
 	}
 
-	// Set environment variables
 	if err := os.Setenv("PYTHONHOME", ".\\"); err != nil {
 		fmt.Println("Error setting PYTHONHOME:", err)
 		return
@@ -51,9 +47,7 @@ func main() {
 		return
 	}
 
-	// Check if requirements.txt exists before installing dependencies
 	if _, err := os.Stat("../requirements.txt"); err == nil {
-		// Installing dependencies
 		installCmd := exec.Command(".\\python.exe", "-m", "pip", "install", "-r", "..\\requirements.txt")
 		if err := installCmd.Run(); err != nil {
 			fmt.Println("Error installing dependencies:", err)
@@ -63,35 +57,14 @@ func main() {
 		fmt.Println("requirements.txt not found. Skipping installation.")
 	}
 
-	// Execute the main.py script
-	fmt.Println("Executing:", "main.py")
-	runCmd := exec.Command(".\\python.exe", "..\\main.py")
+	fmt.Println("Opening a new command prompt to run the Python script...")
 
-	// Create a pipe to read stdout
-	stdout, err := runCmd.StdoutPipe()
+	cmd := exec.Command("cmd", "/C", "start", "cmd", "/K", ".\\python.exe ..\\main.py")
+	err := cmd.Start()
 	if err != nil {
-		fmt.Println("Error creating StdoutPipe:", err)
+		fmt.Println("Error opening new command prompt:", err)
 		return
 	}
 
-	if err := runCmd.Start(); err != nil {
-		fmt.Println("Error starting main.py:", err)
-		return
-	}
-
-	// Print output in real-time
-	scanner := bufio.NewScanner(stdout)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-
-	if err := scanner.Err(); err != nil {
-		fmt.Println("Error reading from stdout:", err)
-	}
-
-	if err := runCmd.Wait(); err != nil {
-		fmt.Println("Error waiting for main.py to finish:", err)
-	}
-
-	fmt.Println("main.py executed successfully.")
+	fmt.Println("Python script is now running in a new command prompt. Exiting Go program.")
 }
